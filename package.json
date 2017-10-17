@@ -1,0 +1,20 @@
+{
+  "name": "nightwatch",
+  "version": "1.0.0",
+  "private": false,
+  "description": "NightWatch.js end to end tests",
+  "author": "crbanman (Claude Banman)",
+  "engines": {
+    "npm": ">=6"
+  },
+  "scripts": {
+    "postinstall": "selenium-standalone install --version=2.53.1",
+    "e2e": "nightwatch -c ./nightwatch.conf.js --env chrome",
+  },
+  "dependencies": {
+    "chromedriver": "^2.28.0",
+    "nightwatch": "^0.9.14",
+    "selenium-standalone": "^6.5.0"
+  }
+}
+
