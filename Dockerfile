@@ -4,9 +4,8 @@ FROM node:8-slim
 RUN set -xe \
   && echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list \
   && apt-get update \
-  && apt-get install -y -t jessie-backports \
-  openjdk-8-jre \
-  ca-certificates-java
+  && apt-get -t jessie-backports install -y \
+  openjdk-8-jre
 
 #install application dependencies
 RUN DEBIAN_FRONTEND=noninteractive \
