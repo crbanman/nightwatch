@@ -1,13 +1,18 @@
 FROM node:8-slim
 
-#install application dependencies
+RUN set -xe \
+  && echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list \
+  && apt-get update \
+  && apt-get install -y -t jessie-backports \
+  openjdk-8-jdk \
+  ca-certificates-java
+
+  #install application dependencies
 RUN DEBIAN_FRONTEND=noninteractive \
   set -ex \
-  && apt-get update \
   && apt-get -y install \
 #    xvfb \
-    curl \
-    openjdk-8-jre
+    curl
 
 #install google-chrome
 RUN set -xe \
