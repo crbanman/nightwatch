@@ -1,4 +1,4 @@
-FROM node:6-slim
+FROM node:8-slim
 
 #install application dependencies
 RUN DEBIAN_FRONTEND=noninteractive \
@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install \
 #    xvfb \
     curl \
-    openjdk-7-jre
+    openjdk-8-jre
 
 #install google-chrome
 RUN set -xe \
